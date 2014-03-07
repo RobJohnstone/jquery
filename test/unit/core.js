@@ -218,7 +218,7 @@ test( "globalEval with 'use strict'", function() {
 	expect( 1 );
 	Globals.register("strictEvalTest");
 
-	jQuery.globalEval("'use strict'; var strictEvalTest = 1;");
+	jQuery.globalEval("/* comment so 'use strict'; isn't at start */ 'use strict'; var strictEvalTest = 1;");
 	equal( window.strictEvalTest, 1, "Test variable declarations are global (strict mode)" );
 });
 
